@@ -1,0 +1,33 @@
+<!-- app/templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }} | Project Dream Team</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+    <li><a href="{{ url_for('home.homepage') }}">Home</a></li>
+    <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+</ul>
+    </nav>
+    <div class="wrapper">
+      {% block body %}
+      {% endblock %}
+      <div class="push"></div>
+    </div>
+    <footer>
+        <<ul class="list-inline">
+    <li><a href="{{ url_for('home.homepage') }}">Home</a></li>
+    <li class="footer-menu-divider">⋅</li>
+    <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+    <li class="footer-menu-divider">⋅</li>
+    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+</ul>
+    </footer>
+</body>
